@@ -1,0 +1,4 @@
+problemot e sho ova cudoto treba da broj kolku pati e stisnat buttonot kolku pati e stisnat switchot. makata e :
+- default e 0 a ko ke pritisnam odi na 1. ARNO ama ko ke go pustam buttonot odi ponovo na nula. 
+a switchot treba da sporedva sostojba samo, toj del ne mi e uste pisan. ako stoe 1 primer 3-4 sekundi da ne praj nisto duri ne promeni sostojba
+ke ima tamu poseben delay ova ona bla bla.
