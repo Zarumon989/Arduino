@@ -35,64 +35,64 @@ pinMode(switchPin, INPUT);
 void loop(){
    buttonState = digitalRead(buttonPin);
    if(lastButtonState != buttonState){
-   if((buttonState == LOW) && (releasedButtSw == true)){
+   if((buttonState == LOW) && (releasedButton == true)){
    buttonIsPressed = true;
    buttonState++;
     }
    delay(50);
    lastButtonState = buttonState;
   }
-  if((lastButtonState==1) && (releasedButtSw == true)){
-    pressedTimesButton++
+  if((lastButtonState==1) && (releasedButton == true)){
+    pressedTimesButton++;
   }
-//  if(pressedTimes == 0){
-//    digitalWrite(ledPin, HIGH);
-//    delay(100);
-//    digitalWrite(ledPin, LOW);
-//    delay(100);
-//  }
-//  if(pressedTimes == 1){
-//    digitalWrite(ledPin, HIGH);
-//    delay(600);
-//    digitalWrite(ledPin, LOW);
-//    delay(450);
-//    digitalWrite(ledPin, HIGH);
-//    delay(100);
-//    digitalWrite(ledPin, LOW);
-//    delay(100);
-//  }
-//  if(pressedTimes = 2){
-//    digitalWrite(ledPin, HIGH);
-//    delay(600);
-//    digitalWrite(ledPin, LOW);
-//    delay(450);
-//    digitalWrite(ledPin, HIGH);
-//    delay(600);
-//    digitalWrite(ledPin, LOW);
-//    delay(450);
-//    digitalWrite(ledPin, HIGH);
-//    delay(100);
-//    digitalWrite(ledPin, LOW);
-//    delay(100);
-//  }
-//  if(pressedTimes = 3){
-//    digitalWrite(ledPin, HIGH);
-//    delay(600);
-//    digitalWrite(ledPin, LOW);
-//    delay(450);
-//    digitalWrite(ledPin, HIGH);
-//    delay(600);
-//    digitalWrite(ledPin, LOW);
-//    delay(450);
-//    digitalWrite(ledPin, HIGH);
-//    delay(600);
-//    digitalWrite(ledPin, LOW);
-//    delay(450);
-//    digitalWrite(ledPin, HIGH);
-//    delay(100);
-//    digitalWrite(ledPin, LOW);
-//    delay(100);
-//  }
+  if(pressedTimesButton == 0){
+    digitalWrite(ledPin, HIGH);
+    delay(100);
+    digitalWrite(ledPin, LOW);
+    delay(100);
+  }
+  if(pressedTimesButton == 1){
+    digitalWrite(ledPin, HIGH);
+    delay(600);
+    digitalWrite(ledPin, LOW);
+    delay(450);
+    digitalWrite(ledPin, HIGH);
+    delay(100);
+    digitalWrite(ledPin, LOW);
+    delay(100);
+  }
+  if(pressedTimesButton == 2){
+    digitalWrite(ledPin, HIGH);
+    delay(600);
+    digitalWrite(ledPin, LOW);
+    delay(450);
+    digitalWrite(ledPin, HIGH);
+    delay(600);
+    digitalWrite(ledPin, LOW);
+    delay(450);
+    digitalWrite(ledPin, HIGH);
+    delay(100);
+    digitalWrite(ledPin, LOW);
+    delay(100);
+  }
+  if(pressedTimesButton == 3){
+    digitalWrite(ledPin, HIGH);
+    delay(600);
+    digitalWrite(ledPin, LOW);
+    delay(450);
+    digitalWrite(ledPin, HIGH);
+    delay(600);
+    digitalWrite(ledPin, LOW);
+    delay(450);
+    digitalWrite(ledPin, HIGH);
+    delay(600);
+    digitalWrite(ledPin, LOW);
+    delay(450);
+    digitalWrite(ledPin, HIGH);
+    delay(100);
+    digitalWrite(ledPin, LOW);
+    delay(100);
+  }
   
   Serial.println("lastButtonState");
   Serial.println(lastButtonState);
@@ -108,7 +108,7 @@ void loop(){
      lastSwitchState = switchState;
   }
   if((lastSwitchState==1) && (releasedSwitch == true)){
-    pressedTimesSwitch++
+    pressedTimesSwitch++;
   }
     Serial.println("lastSwitchState");
       Serial.println(lastSwitchState);
