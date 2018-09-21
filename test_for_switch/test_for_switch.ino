@@ -18,7 +18,8 @@ int pressedTimesSwitch=0;
 
 bool buttonIsPressed = false;
 bool switchIsPressed = false;
-
+bool releasedButton = true;
+bool releasedSwitch = true;
 
 void setup() {
   //Debugger
@@ -34,23 +35,23 @@ pinMode(switchPin, INPUT);
 void loop(){
    buttonState = digitalRead(buttonPin);
    if(lastButtonState != buttonState){
-   if(buttonState == LOW){
-
+   if((buttonState == LOW) && (releasedButtSw == true)){
+   buttonIsPressed = true;
    buttonState++;
     }
-   delay(100);
+   delay(50);
    lastButtonState = buttonState;
   }
-  if(lastButtonState){
-    pressedTimes++
+  if((lastButtonState==1) && (releasedButtSw == true)){
+    pressedTimesButton++
   }
-//  if(lastButtonState = 0){
+//  if(pressedTimes == 0){
 //    digitalWrite(ledPin, HIGH);
 //    delay(100);
 //    digitalWrite(ledPin, LOW);
 //    delay(100);
 //  }
-//  if(lastButtonState = 1){
+//  if(pressedTimes == 1){
 //    digitalWrite(ledPin, HIGH);
 //    delay(600);
 //    digitalWrite(ledPin, LOW);
@@ -60,7 +61,7 @@ void loop(){
 //    digitalWrite(ledPin, LOW);
 //    delay(100);
 //  }
-//  if(lastButtonState = 2){
+//  if(pressedTimes = 2){
 //    digitalWrite(ledPin, HIGH);
 //    delay(600);
 //    digitalWrite(ledPin, LOW);
@@ -74,7 +75,7 @@ void loop(){
 //    digitalWrite(ledPin, LOW);
 //    delay(100);
 //  }
-//  if(lastButtonState = 3){
+//  if(pressedTimes = 3){
 //    digitalWrite(ledPin, HIGH);
 //    delay(600);
 //    digitalWrite(ledPin, LOW);
@@ -100,13 +101,17 @@ void loop(){
    switchState = digitalRead(switchPin);
   if(lastSwitchState != switchState){
     if(switchState == LOW){
+      switchIsPressed = true;
        switchState++;
       }
     delay(100);
      lastSwitchState = switchState;
   }
+  if((lastSwitchState==1) && (releasedSwitch == true)){
+    pressedTimesSwitch++
+  }
     Serial.println("lastSwitchState");
-  Serial.println(lastSwitchState);
-  delay(500);
+      Serial.println(lastSwitchState);
+      delay(500);
 }
 
