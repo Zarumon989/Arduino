@@ -33,7 +33,11 @@ pinMode(switchPin, INPUT);
 }
 
 void loop(){
-   buttonState = digitalRead(buttonPin);
+  checkButton();
+  checkSwitch();
+  }
+void checkButton(){
+     buttonState = digitalRead(buttonPin);
    if(lastButtonState != buttonState){
    if((buttonState == LOW) && (releasedButton == true)){
    buttonIsPressed = true;
@@ -101,7 +105,9 @@ void loop(){
   Serial.println(pressedTimesButton);
   delay(500);
 
-   switchState = digitalRead(switchPin);
+}
+void checkSwitch(){
+     switchState = digitalRead(switchPin);
   if(lastSwitchState != switchState){
     if(switchState == LOW){
       switchIsPressed = true;
