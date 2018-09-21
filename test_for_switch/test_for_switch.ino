@@ -39,7 +39,7 @@ void loop(){
 void checkButton(){
      buttonState = digitalRead(buttonPin);
    if(lastButtonState != buttonState){
-   if((buttonState == HIGH) && (releasedButton == true)){
+   if((buttonState == LOW) && (releasedButton == true)){
    buttonIsPressed = true;
    buttonState++;
     }
@@ -109,7 +109,7 @@ void checkButton(){
 void checkSwitch(){
      switchState = digitalRead(switchPin);
   if(lastSwitchState != switchState){
-    if(switchState == HIGH){
+    if(switchState == LOW){
       switchIsPressed = true;
        switchState++;
       }
