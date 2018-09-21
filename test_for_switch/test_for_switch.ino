@@ -45,6 +45,9 @@ void loop(){
   if((lastButtonState==1) && (releasedButton == true)){
     pressedTimesButton++;
   }
+  if(pressedTimesButton >=4){
+    pressedTimesButton =1;
+  }
   if(pressedTimesButton == 0){
     digitalWrite(ledPin, HIGH);
     delay(100);
@@ -94,8 +97,8 @@ void loop(){
     delay(100);
   }
   
-  Serial.println("lastButtonState");
-  Serial.println(lastButtonState);
+  Serial.println("pressedTimesButton");
+  Serial.println(pressedTimesButton);
   delay(500);
 
    switchState = digitalRead(switchPin);
@@ -111,7 +114,7 @@ void loop(){
     pressedTimesSwitch++;
   }
     Serial.println("lastSwitchState");
-      Serial.println(lastSwitchState);
+      Serial.println(pressedTimesSwitch);
       delay(500);
 }
 
