@@ -27,7 +27,7 @@ pinMode(switchPin, INPUT);
 
 void loop(){
    buttonState = digitalRead(buttonPin);
-   if(lastButtonState =!buttonState){
+   if(lastButtonState != buttonState){
    if(buttonState == LOW){
 
    buttonState++;
@@ -94,7 +94,7 @@ void loop(){
   delay(500);
 
    switchState = digitalRead(switchPin);
-  if(lastSwitchState=!switchState){
+  if(lastSwitchState != switchState){
     if(switchState == LOW){
        switchState++;
       }
