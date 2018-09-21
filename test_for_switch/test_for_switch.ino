@@ -1,7 +1,7 @@
 // Pin definiton 
-int ledPin=1;
-int buttonPin=2;
-int switchPin=3;
+int ledPin = 1;
+int buttonPin = 2;
+int switchPin = 3;
 
 // State definition for sampling and checking 
 int buttonState = 0;
@@ -13,8 +13,8 @@ int lastSwitchState = 0;
 int stateOne = 10 * 100;
 int stateTwo = 20 * 100;
 int stateThree = 30 * 100;
-int pressedTimesButton=0;
-int pressedTimesSwitch=0;
+int pressedTimesButton = 0;
+int pressedTimesSwitch = 0;
 
 bool buttonIsPressed = false;
 bool switchIsPressed = false;
@@ -39,18 +39,18 @@ void loop(){
 void checkButton(){
      buttonState = digitalRead(buttonPin);
    if(lastButtonState != buttonState){
-   if((buttonState == LOW) && (releasedButton == true)){
+   if((buttonState == HIGH) && (releasedButton == true)){
    buttonIsPressed = true;
    buttonState++;
     }
    delay(50);
    lastButtonState = buttonState;
   }
-  if((lastButtonState==1) && (releasedButton == true)){
-    pressedTimesButton++;
+  if((lastButtonState == 1) && (releasedButton == true)){
+    pressedTimesButton = lastButtonState+1;
   }
-  if(pressedTimesButton >=4){
-    pressedTimesButton =1;
+  if(pressedTimesButton >= 4){
+    pressedTimesButton = 1;
   }
   if(pressedTimesButton == 0){
     digitalWrite(ledPin, HIGH);
@@ -109,15 +109,15 @@ void checkButton(){
 void checkSwitch(){
      switchState = digitalRead(switchPin);
   if(lastSwitchState != switchState){
-    if(switchState == LOW){
+    if(switchState == HIGH){
       switchIsPressed = true;
        switchState++;
       }
     delay(100);
      lastSwitchState = switchState;
   }
-  if((lastSwitchState==1) && (releasedSwitch == true)){
-    pressedTimesSwitch++;
+  if((lastSwitchState == 1) && (releasedSwitch == true)){
+    pressedTimesSwitch = lastSwitchState + 1;
   }
     Serial.println("lastSwitchState");
       Serial.println(pressedTimesSwitch);
