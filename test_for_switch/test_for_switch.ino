@@ -13,6 +13,12 @@ int lastSwitchState = 0;
 int stateOne = 10 * 100;
 int stateTwo = 20 * 100;
 int stateThree = 30 * 100;
+int pressedTimesButton=0;
+int pressedTimesSwitch=0;
+
+bool buttonIsPressed = false;
+bool switchIsPressed = false;
+
 
 void setup() {
   //Debugger
@@ -34,12 +40,10 @@ void loop(){
     }
    delay(100);
    lastButtonState = buttonState;
-   if(lastButtonState>= 4){
-    buttonState=1;
-    lastButtonState = buttonState;
-   }
   }
-  
+  if(lastButtonState){
+    pressedTimes++
+  }
 //  if(lastButtonState = 0){
 //    digitalWrite(ledPin, HIGH);
 //    delay(100);
